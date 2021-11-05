@@ -23,11 +23,16 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [board, setBoard] = useState(boards[0]);
 
-  useEffect(()=>{ 
+  let snapshotUnsubscribe = undefined;
+
+  function subscribeToSnapshot() {
+    if (snapshotUnsubscribe) {
+      snapshotUnsubscribe();
+    }
     const q = query(collection(db, 'messageBoard'), 
                     limit(3),
                     orderBy('timestamp', 'desc'));
-    onSnapshot(q, (qSnap) => {
+    snapshotUnsubscribe = onSnapshot(q, (qSnap) => {
       let newMessages = [];
       qSnap.docs.forEach((docSnap)=>{
         let msg = docSnap.data();
@@ -37,6 +42,9 @@ export default function App() {
       });
       setMessages(newMessages);
     });
+  }
+  useEffect(()=>{ 
+    subscribeToSnapshot();
   }, []);
 
   return (
@@ -93,7 +101,6 @@ export default function App() {
         <FlatList
           data={messages}
           renderItem={({item})=>{
-            console.log(item);
             return (
               <View style={[
                 styles.messageContainer
