@@ -6,7 +6,6 @@ import {
   where, doc, addDoc, getDoc, onSnapshot
 } from "firebase/firestore";
 import { firebaseConfig } from './Secrets';
-import { render } from 'react-dom';
 
 let app;
 if (getApps().length == 0){
@@ -128,14 +127,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingTop: '15%'
-  },
-  selectUserContainer: {
-    flex: 0.1,
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-evenly',
-    width: '90%',
-    paddingBottom: '3%'
   },
   inputContainer: {
     flex: 0.1,
