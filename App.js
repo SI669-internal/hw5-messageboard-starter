@@ -15,6 +15,8 @@ const db = initializeFirestore(app, {
   useFetchStreams: false
 });
 
+let snapshotUnsubscribe = undefined;
+
 export default function App() {
 
   const boards = ['#general', '#announcements', '#random'];
@@ -23,15 +25,11 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [board, setBoard] = useState(boards[0]);
 
-  let snapshotUnsubscribe = undefined;
-
-  function subscribeToSnapshot() {
+  function subscribeToSnapshot () {
     if (snapshotUnsubscribe) {
       snapshotUnsubscribe();
     }
-    const q = query(collection(db, 'messageBoard'), 
-                    limit(3),
-                    orderBy('timestamp', 'desc'));
+    const q = query(collection(db, 'messageBoard'));
     snapshotUnsubscribe = onSnapshot(q, (qSnap) => {
       let newMessages = [];
       qSnap.docs.forEach((docSnap)=>{
@@ -43,6 +41,7 @@ export default function App() {
       setMessages(newMessages);
     });
   }
+
   useEffect(()=>{ 
     subscribeToSnapshot();
   }, []);
