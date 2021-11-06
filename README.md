@@ -45,7 +45,7 @@ Please see the [Demo Video](https://www.loom.com/share/7f77adee5423485ea6c251821
 
 ## Extra Credit
 
-Implement a Switch that allows the user to hide/unhide completed items. Please see the Extra Credit [Demo Video](https://www.loom.com/share/ced1df9c86284c6aacc879d80f6667b1). 
+Display message for each board in reverse chronological order (newest to oldest). This is a bit trickier than it seems at first!
 
 ## Grading (up to 4 points)
 | No. | Requirement  | Points |
