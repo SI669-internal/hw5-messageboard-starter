@@ -45,11 +45,13 @@ Please see the [Demo Video](https://www.loom.com/share/7f77adee5423485ea6c251821
 
 ## Extra Credit
 
-Display message for each board in reverse chronological order (newest to oldest). This is a bit trickier than it seems at first!
+Add an "#all" board that displays messages from all boards. Messages posted to the "#all" board should only show up on "#all". Also allow user to choose whether to display messages for each board in ascending or descending chronological order. This is a bit trickier than it seems at first! See the [Demo Video](https://www.loom.com/share/6294d123214f497e96da0ad37de35014). 
 
 ## Grading (up to 4 points)
 | No. | Requirement  | Points |
 | --- | ------------- | ------------- |
-| 1 | Messages are displayed in reverse chronological order (newest to oldest) | 1 |
-| 2 | [Code Review] Code correctly uses Firebase queries to both select messages and put them in order | 3 |
+| 1 | Messages posted to any board are displayed when the "#all" board is selected | 1 |
+| 2 | Sort order buttons change color correctly, and messages are displayed in the selected chronological order (ascending or descending) | 1 |
+| 2 | Sort order is preserved when changing boards (same order applies to all boards) | 1 |
+| 3 | [Code Review] Code correctly uses Firebase queries to both select messages and put them in order | 1 |
 |   | **Total** | **4**
