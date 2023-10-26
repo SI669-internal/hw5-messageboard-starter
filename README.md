@@ -1,6 +1,6 @@
 # HW5 Message Board
 
-**SI669 Fall 2022**
+**SI669 Fall 2023**
 
 ## Video Walkthrough
 Please see the [Demo Video](https://www.loom.com/share/7f77adee5423485ea6c2518216a8126d). 
@@ -28,7 +28,6 @@ Please see the [Demo Video](https://www.loom.com/share/7f77adee5423485ea6c251821
 * Remember that you can have useEffect run on every render (don't provide a second argument) or run only once (provide an empty list as the second argument). You can also have it run only when specified variables *change*. For example, `useEffect(()=>{/*function*/}, [foo])` would run after any render if and only if the value of `foo` had changed since the previous render. This information is likely to come in handy.
 * You will need to cause things to happen in your app from another instance of the app, but you don't need to include video from both instances in your submission video. Just having things happen in the recorded app without any action by the current user is enough!
 * Even though the starter code shows timestamps, you do not need to make the messages show in chronological order. This is actually a bit tricky (to filter AND order messages with a Firebase query), so that part is extra credit!
-* The DataModel.js included with the starter code is not actually used in the app. It was left in by mistake!
 
 ## Grading (up to 120 points)
 | No. | Requirement  | Points |
