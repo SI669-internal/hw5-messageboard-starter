@@ -1,6 +1,6 @@
 # HW5 Message Board
 
-**SI669 Fall 2023**
+**SI669 Fall 2025**
 
 ## Video Walkthrough
 Please see the [Demo Video](https://www.loom.com/share/7f77adee5423485ea6c2518216a8126d). 
